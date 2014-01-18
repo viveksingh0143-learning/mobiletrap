@@ -1,0 +1,14 @@
+<ul class="nav nav-pills pull-right">
+  <li><%= link_to "Home", "/" %></li>
+  <li><%= link_to "Support", page_path('support') %></li>
+  <li><%= link_to "Our Plan", page_path('our-plan') %></li>
+  <li><%= link_to "How To Use", page_path('how-to-use') %></li>
+  <li><%= link_to "Contact Us", page_path('contact-us') %></li>
+  <li>
+    <%=
+       link_to_if(current_user.nil?, "Sign In", :signin,  method: :get) do
+         link_to('Sign Out', :signout_delete, method: :delete)
+       end
+    %>
+  </li>
+</ul>

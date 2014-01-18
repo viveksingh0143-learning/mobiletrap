@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</p>
+
+<p>
+  <strong>Imei:</strong>
+  <%= @device.imei %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @device.serial_number %>
+</p>
+
+<p>
+  <strong>Devise type:</strong>
+  <%= @device.devise_type %>
+</p>
+
+<p>
+  <strong>Os:</strong>
+  <%= @device.os %>
+</p>
+
+<p>
+  <strong>Hardware platform:</strong>
+  <%= @device.hardware_platform %>
+</p>
+
+<p>
+  <strong>Platform string:</strong>
+  <%= @device.platform_string %>
+</p>
+
+<p>
+  <strong>Total memory:</strong>
+  <%= @device.total_memory %>
+</p>
+
+<p>
+  <strong>Total disk:</strong>
+  <%= @device.total_disk %>
+</p>
+
+<p>
+  <strong>Free disk space:</strong>
+  <%= @device.free_disk_space %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @device.user %>
+</p>
+
+<%= link_to 'Edit', edit_admin_device_path(@device) %> |
+<%= link_to 'Back', admin_devices_path %>

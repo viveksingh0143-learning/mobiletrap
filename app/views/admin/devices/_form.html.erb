@@ -1,0 +1,52 @@
+<div class="col-sm-6">
+<%= simple_form_for([:admin, @device], :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-group">
+    <%= f.input :name, placeholder: 'Name', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :imei, placeholder: 'Imei', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :serial_number, placeholder: 'Serial number', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :devise_type, placeholder: 'Devise type', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :os, placeholder: 'Os', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :hardware_platform, placeholder: 'Hardware platform', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :platform_string, placeholder: 'Platform string', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :total_memory, placeholder: 'Total memory', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :total_disk, placeholder: 'Total disk', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :free_disk_space, placeholder: 'Free disk space', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.association :user, label_method: :username, value_method: :id, include_blank: true, input_html: { class: 'form-control' } %>
+  </div>
+    
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>
