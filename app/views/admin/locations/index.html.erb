@@ -6,8 +6,10 @@
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Time</th>
+      <% if current_user.admin %>
       <th>Device</th>
       <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -17,15 +19,18 @@
         <td><%= location.latitude %></td>
         <td><%= location.longitude %></td>
         <td><%= location.time %></td>
+        <% if current_user.admin %>
         <td><%= location.device %></td>
         <td><%= link_to 'Show', admin_location_path(location) %></td>
         <td><%= link_to 'Edit', edit_admin_location_path(location) %></td>
         <td><%= link_to 'Destroy', admin_location_path(location), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if current_user.admin %>
 <%= link_to 'New Location', new_admin_location_path %>
+<% end %>

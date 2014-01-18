@@ -7,8 +7,10 @@
       <th>Msg type</th>
       <th>Message</th>
       <th>Time</th>
+      <% if current_user.admin %>
       <th>Device</th>
       <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -20,15 +22,18 @@
         <td><%= message.msg_type %></td>
         <td><%= message.message %></td>
         <td><%= message.time %></td>
+        <% if current_user.admin %>
         <td><%= message.device %></td>
         <td><%= link_to 'Show', admin_message_path(message) %></td>
         <td><%= link_to 'Edit', edit_admin_message_path(message) %></td>
         <td><%= link_to 'Destroy', admin_message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if current_user.admin %>
 <%= link_to 'New Message', new_admin_message_path %>
+<% end %>
