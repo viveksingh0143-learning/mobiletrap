@@ -17,7 +17,7 @@ module ApplicationHelper
     status_arr = {1 => 'Active', 0 => 'In-Active'}
     if status
       return status_arr[status]
-    else
+    else 
       return status_arr
     end
   end

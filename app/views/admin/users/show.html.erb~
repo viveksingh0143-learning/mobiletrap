@@ -13,7 +13,7 @@
 </p>
 <p>
   <strong>Status:</strong>
-  <%= @user.status %>
+  <%= user_status(@user.status) %>
 </p>
 <p>
   <strong>Admin:</strong>
