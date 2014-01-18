@@ -72,5 +72,9 @@ module Admin
       def device_params
         params.require(:device).permit(:name, :imei, :serial_number, :devise_type, :os, :hardware_platform, :platform_string, :total_memory, :total_disk, :free_disk_space, :user_id)
       end
+
+      def current_resource
+        @current_resource ||= Device.find(params[:id]) if params[:id]
+      end
   end
 end

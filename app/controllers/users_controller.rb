@@ -1,5 +1,6 @@
 class UsersController < FrontendController
-
+  before_action :save_login_state,  :only => [:new, :create]
+  
   # GET /users/new
   def new
     @user = User.new
