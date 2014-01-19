@@ -11,5 +11,10 @@ module Admin
       end
     end
     helper_method :all_device
+    
+    def selected_device
+      @selected_device ||= all_device
+    end
+    helper_method :selected_device
   end
 end

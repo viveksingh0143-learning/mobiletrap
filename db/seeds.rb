@@ -71,4 +71,59 @@ device3.free_disk_space = '30 GB'
 device3.user = subscriber2
 device3.save
 
+contact1 = Contact.find_by_uniqid('1') || Contact.new
+contact1.uniqid = '1'
+contact1.number = '9910896895'
+contact1.name = 'User 1'
+contact1.device = device1
+contact1.save
 
+contact2 = Contact.find_by_uniqid('2') || Contact.new
+contact2.uniqid = '2'
+contact2.number = '9910896896'
+contact2.name = 'User 2'
+contact2.device = device1
+contact2.save
+
+contact3 = Contact.find_by_uniqid('3') || Contact.new
+contact3.uniqid = '3'
+contact3.number = '9910896897'
+contact3.name = 'User 3'
+contact3.device = device2
+contact3.save
+
+logs1 = Log.find_by_uniqid('1') || Log.new
+logs1.uniqid = '1'
+logs1.contact = contact1
+logs1.log_type = 'IN'
+logs1.time = Time.now
+logs1.duration = 3.3
+logs1.device = device1
+logs1.save
+
+logs2 = Log.find_by_uniqid('2') || Log.new
+logs2.uniqid = '2'
+logs2.contact = contact1
+logs2.log_type = 'OUT'
+logs2.time = Time.now
+logs2.duration = 4.1
+logs2.device = device1
+logs2.save
+
+logs3 = Log.find_by_uniqid('3') || Log.new
+logs3.uniqid = '3'
+logs3.contact = contact2
+logs3.log_type = 'IN'
+logs3.time = Time.now
+logs3.duration = 3.2
+logs3.device = device1
+logs3.save
+
+logs4 = Log.find_by_uniqid('4') || Log.new
+logs4.uniqid = '4'
+logs4.contact = contact2
+logs4.log_type = 'OUT'
+logs4.time = Time.now
+logs4.duration = 3.3
+logs4.device = device2
+logs4.save

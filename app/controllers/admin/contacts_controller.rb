@@ -5,7 +5,7 @@ module Admin
     # GET /contacts
     # GET /contacts.json
     def index
-      @contacts = Contact.all
+      @contacts ||= Contact.where(device_id: selected_device)
     end
 
     # GET /contacts/1

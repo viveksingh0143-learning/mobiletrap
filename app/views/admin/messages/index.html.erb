@@ -1,12 +1,11 @@
-<h1>Listing messages</h1>
+<h3 class="page-title"><%= @messages.size %> SMS</h3>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Uniqid</th>
-      <th>Contact</th>
-      <th>Msg type</th>
-      <th>Message</th>
+      <th>Type</th>
       <th>Time</th>
+      <th>Name / Number</th>
+      <th>SMS Content</th>
       <% if current_user.admin %>
       <th>Device</th>
       <th colspan="3"></th>
@@ -17,13 +16,12 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.uniqid %></td>
-        <td><%= message.contact %></td>
         <td><%= message.msg_type %></td>
-        <td><%= message.message %></td>
         <td><%= message.time %></td>
+        <td><%= message.contact.name %><br><%= message.contact.number %></td>
+        <td style="width: 50%;"><div class="well well-sm sms-text"><%= message.message %></div></td>
         <% if current_user.admin %>
-        <td><%= message.device %></td>
+        <td><%= message.device.name %></td>
         <td><%= link_to 'Show', admin_message_path(message) %></td>
         <td><%= link_to 'Edit', edit_admin_message_path(message) %></td>
         <td><%= link_to 'Destroy', admin_message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %></td>

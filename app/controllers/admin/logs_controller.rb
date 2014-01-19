@@ -5,7 +5,7 @@ module Admin
     # GET /logs
     # GET /logs.json
     def index
-      @logs = Log.all
+      @logs ||= Log.where(device_id: selected_device)
     end
 
     # GET /logs/1
@@ -70,7 +70,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def log_params
-        params.require(:log).permit(:uniqid, :contact, :log_type, :time, :duration, :device_id)
+        params.require(:log).permit(:uniqid, :contact_id, :log_type, :time, :duration, :device_id)
       end
   end
 end

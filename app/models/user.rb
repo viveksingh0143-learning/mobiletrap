@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   has_many :devices
   
+  has_many :logs, :through => :devices
+  has_many :contacts, :through => :devices
+  has_many :messages, :through => :devices
+  has_many :locations, :through => :devices
+  has_many :apps, :through => :devices
+  
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :username, :presence => true, uniqueness: { case_sensitive: false }, :length => { :in => 3..55}
   validates :email, :presence => true, uniqueness: { case_sensitive: false }, :format => EMAIL_REGEX

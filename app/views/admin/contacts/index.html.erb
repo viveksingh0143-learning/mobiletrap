@@ -1,11 +1,13 @@
-<h1>Listing contacts</h1>
+<h3 class="page-title"><%= pluralize( @contacts.size, 'Contact' ) %> in Address Book</h3>
+
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Uniqid</th>
-      <th>Number</th>
       <th>Name</th>
+      <th>Number</th>
+      <th>SMS</th>
+      <th>Calls</th>
       <% if current_user.admin %>
       <th>Device</th>
       <th colspan="3"></th>
@@ -16,9 +18,10 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= contact.uniqid %></td>
-        <td><%= contact.number %></td>
         <td><%= contact.name %></td>
+        <td><%= contact.number %></td>
+        <td><%= contact.messages.count %></td>
+        <td><%= contact.logs.count %></td>
         <% if current_user.admin %>
         <td><%= contact.device %></td>
         <td><%= link_to 'Show', admin_contact_path(contact) %></td>

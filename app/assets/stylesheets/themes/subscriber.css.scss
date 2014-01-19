@@ -299,8 +299,8 @@ div.side-bar ul.nav li a.active .field-count, div.side-bar ul.nav li a:hover .fi
   padding: 12px;
 }
 .content-container {
-	border-bottom:2px solid #f2f2f2;
-	margin-bottom:11px;
+	border-bottom:5px solid #f2f2f2;
+	margin-bottom:30px;
 }
 .phone-desc {
   font-size: 14px;
@@ -342,4 +342,7 @@ div.side-bar ul.nav li a.active .field-count, div.side-bar ul.nav li a:hover .fi
 .n-space {
   display: inline-block;
   min-width: 50px;
+}
+.sms-text {
+  background-color: #FFFFFF;
 }
