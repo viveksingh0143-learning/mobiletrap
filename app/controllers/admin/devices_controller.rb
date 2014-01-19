@@ -5,7 +5,7 @@ module Admin
     # GET /devices
     # GET /devices.json
     def index
-      @devices = Device.all
+      @devices = all_device
     end
 
     # GET /devices/1

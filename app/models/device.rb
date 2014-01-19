@@ -1,4 +1,10 @@
 class Device < ActiveRecord::Base
+  has_many :apps
+  has_many :contacts
+  has_many :locations
+  has_many :logs
+  has_many :messages
+
   belongs_to :user
   validates :name, presence: true
   validates :devise_type, presence: true

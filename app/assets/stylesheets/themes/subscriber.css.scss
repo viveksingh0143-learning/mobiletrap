@@ -278,3 +278,68 @@ div.side-bar ul.nav li a.active .field-count, div.side-bar ul.nav li a:hover .fi
   background-color: #f0f0f0;
   color: #a9a9a9;
 }
+.page-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+.box-page-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+.content-box {
+  display: block;
+  width: 100%;
+  border-color: #E6E6E6 #E6E6E6 #D7D7D7;
+  border-style: solid;
+  border-width: 1px;
+  padding: 12px;
+}
+.content-container {
+	border-bottom:2px solid #f2f2f2;
+	margin-bottom:11px;
+}
+.phone-desc {
+  font-size: 14px;
+  padding-top: 9px;
+}
+.content-box-bottom-content {
+  border-top: 1px solid #EFEFEF;
+  padding: 8px 10px 11px;
+}
+.att-container a, .att-container a:visited, .att-container a:focus {
+  color: #000000;
+}
+.att-container {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.att-container .att-count {
+  float: right;
+}
+.att-container .att-count {
+  border-radius: 10px 10px 10px 10px;
+  border: 1px #999999 solid;
+  color: #999999;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 10px;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.att-container .att-label {
+  font-weight: bold;
+  min-width: 140px;
+  display: inline-block;
+}
+.n-space {
+  display: inline-block;
+  min-width: 50px;
+}

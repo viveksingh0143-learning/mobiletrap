@@ -3,7 +3,7 @@
     <div class="col-lg-3">
       <div class="input-group">
         <span class="input-group-addon devise-select-label"><i class="fa fa-android"></i></span>
-        <%= collection_select(:device, :id, Device.all, :id, :name, {prompt: "Pick a Device"}, {class: "form-control input-device"}) %>
+        <%= collection_select(:device, :id, all_device, :id, :name, {prompt: "Pick a Device"}, {class: "form-control input-device"}) %>
       </div>
     </div><!-- /.col-lg-6 -->
     <div class="col-lg-8 input-daterange">
