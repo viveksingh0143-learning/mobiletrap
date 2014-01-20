@@ -1,5 +1,4 @@
-<h1>Listing apps</h1>
-
+<h3 class="page-title"><%= pluralize( @apps.size, 'program' ) %> Installed</h3>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -20,7 +19,7 @@
         <td><%= app.version %></td>
         <td><%= app.package %></td>
         <% if current_user.admin %>
-        <td><%= app.device %></td>
+        <td><%= app.device.name %></td>
         <td><%= link_to 'Show', admin_app_path(app) %></td>
         <td><%= link_to 'Edit', edit_admin_app_path(app) %></td>
         <td><%= link_to 'Destroy', admin_app_path(app), method: :delete, data: { confirm: 'Are you sure?' } %></td>

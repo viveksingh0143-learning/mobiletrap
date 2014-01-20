@@ -23,7 +23,7 @@
         <td><%= contact.messages.count %></td>
         <td><%= contact.logs.count %></td>
         <% if current_user.admin %>
-        <td><%= contact.device.name %></td>
+        <td><%= contact.device %></td>
         <td><%= link_to 'Show', admin_contact_path(contact) %></td>
         <td><%= link_to 'Edit', edit_admin_contact_path(contact) %></td>
         <td><%= link_to 'Destroy', admin_contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } %></td>

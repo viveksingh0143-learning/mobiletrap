@@ -54,7 +54,7 @@ device2.hardware_platform = 'Core INTEL'
 device2.total_memory = '1 GB'
 device2.total_disk = '125 GB'
 device2.free_disk_space = '30 GB'
-device2.user = subscriber2
+device2.user = subscriber1
 device2.save
 
 
@@ -127,3 +127,84 @@ logs4.time = Time.now
 logs4.duration = 3.3
 logs4.device = device2
 logs4.save
+
+sms1 = Message.find_by_uniqid('1') || Message.new
+sms1.uniqid = '1'
+sms1.contact = contact2
+sms1.msg_type = 'IN'
+sms1.message = 'What are you doing'
+sms1.time = Time.now
+sms1.device = device2
+sms1.save
+
+sms2 = Message.find_by_uniqid('2') || Message.new
+sms2.uniqid = '2'
+sms2.contact = contact2
+sms2.msg_type = 'OUT'
+sms2.message = 'I am at home, it is so boring these days, whot not planing for some outing. What do you say? I am free on next week. We can plan for GOA, What you say?'
+sms2.time = Time.now
+sms2.device = device2
+sms2.save
+
+app1 = App.find_by_program('Whats Up') || App.new
+app1.program = 'Whats Up'
+app1.version = '1.0.5'
+app1.package = 'Entertainment'
+app1.device = device2
+app1.save
+
+app2 = App.find_by_program('MS Word') || App.new
+app2.program = 'MS Word'
+app2.version = '2.0.5'
+app2.package = 'MS Office'
+app2.device = device2
+app2.save
+
+app3 = App.find_by_program('MS Excel') || App.new
+app3.program = 'MS Excel'
+app3.version = '2.5.5'
+app3.package = 'MS Office'
+app3.device = device2
+app3.save
+
+app4 = App.find_by_program('MS Image Viewer') || App.new
+app4.program = 'MS Image Viewer'
+app4.version = '1.3.5'
+app4.package = 'MS Office'
+app4.device = device2
+app4.save
+
+app5 = App.find_by_program('Pdf Preview') || App.new
+app5.program = 'Pdf Preview'
+app5.version = '8.1.1'
+app5.package = 'MS Office'
+app5.device = device2
+app5.save
+
+loc1 = Location.new
+loc1.latitude = '20.4518154'
+loc1.longitude = '11.5454154'
+loc1.time = Time.now
+loc1.device = device2
+loc1.save
+
+loc1 = Location.new
+loc1.latitude = '18.4875154'
+loc1.longitude = '13.5128154'
+loc1.time = Time.now
+loc1.device = device2
+loc1.save
+
+loc1 = Location.new
+loc1.latitude = '21.4578154'
+loc1.longitude = '15.5478154'
+loc1.time = Time.now
+loc1.device = device2
+loc1.save
+
+loc1 = Location.new
+loc1.latitude = '20.4578154'
+loc1.longitude = '19.5478154'
+loc1.time = Time.now
+loc1.device = device2
+loc1.save

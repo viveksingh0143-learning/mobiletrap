@@ -24,7 +24,7 @@
         <td><%= log.contact.number %></td>
         <td><%= log.duration %></td>
         <% if current_user.admin %>
-        <td><%= log.device.name %></td>
+        <td><%= log.device %></td>
         <td><%= link_to 'Show', admin_log_path(log) %></td>
         <td><%= link_to 'Edit', edit_admin_log_path(log) %></td>
         <td><%= link_to 'Destroy', admin_log_path(log), method: :delete, data: { confirm: 'Are you sure?' } %></td>
