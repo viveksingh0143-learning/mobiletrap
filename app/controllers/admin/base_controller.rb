@@ -13,7 +13,9 @@ module Admin
     helper_method :all_device
     
     def selected_device
-#      @selected_device ||= Device.find(params[:device[:id]])
+      if params[:device_id] && params[:device_id] != ""
+        @selected_device ||= Device.find(params[:device_id])
+      end
       @selected_device ||= all_device
     end
     helper_method :selected_device

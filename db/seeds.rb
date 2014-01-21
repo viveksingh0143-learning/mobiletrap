@@ -54,7 +54,7 @@ device2.hardware_platform = 'Core INTEL'
 device2.total_memory = '1 GB'
 device2.total_disk = '125 GB'
 device2.free_disk_space = '30 GB'
-device2.user = subscriber1
+device2.user = subscriber2
 device2.save
 
 
@@ -68,7 +68,7 @@ device3.hardware_platform = 'Core INTEL'
 device3.total_memory = '1 GB'
 device3.total_disk = '125 GB'
 device3.free_disk_space = '30 GB'
-device3.user = subscriber2
+device3.user = subscriber1
 device3.save
 
 contact1 = Contact.find_by_uniqid('1') || Contact.new
@@ -125,7 +125,7 @@ logs4.contact = contact2
 logs4.log_type = 'OUT'
 logs4.time = Time.now
 logs4.duration = 3.3
-logs4.device = device2
+logs4.device = device1
 logs4.save
 
 sms1 = Message.find_by_uniqid('1') || Message.new
@@ -134,7 +134,7 @@ sms1.contact = contact2
 sms1.msg_type = 'IN'
 sms1.message = 'What are you doing'
 sms1.time = Time.now
-sms1.device = device2
+sms1.device = device1
 sms1.save
 
 sms2 = Message.find_by_uniqid('2') || Message.new
@@ -143,21 +143,21 @@ sms2.contact = contact2
 sms2.msg_type = 'OUT'
 sms2.message = 'I am at home, it is so boring these days, whot not planing for some outing. What do you say? I am free on next week. We can plan for GOA, What you say?'
 sms2.time = Time.now
-sms2.device = device2
+sms2.device = device1
 sms2.save
 
 app1 = App.find_by_program('Whats Up') || App.new
 app1.program = 'Whats Up'
 app1.version = '1.0.5'
 app1.package = 'Entertainment'
-app1.device = device2
+app1.device = device1
 app1.save
 
 app2 = App.find_by_program('MS Word') || App.new
 app2.program = 'MS Word'
 app2.version = '2.0.5'
 app2.package = 'MS Office'
-app2.device = device2
+app2.device = device1
 app2.save
 
 app3 = App.find_by_program('MS Excel') || App.new
@@ -178,33 +178,33 @@ app5 = App.find_by_program('Pdf Preview') || App.new
 app5.program = 'Pdf Preview'
 app5.version = '8.1.1'
 app5.package = 'MS Office'
-app5.device = device2
+app5.device = device3
 app5.save
 
 loc1 = Location.new
 loc1.latitude = '20.4518154'
 loc1.longitude = '11.5454154'
 loc1.time = Time.now
-loc1.device = device2
+loc1.device = device1
 loc1.save
 
-loc1 = Location.new
-loc1.latitude = '18.4875154'
-loc1.longitude = '13.5128154'
-loc1.time = Time.now
-loc1.device = device2
-loc1.save
+loc2 = Location.new
+loc2.latitude = '18.4875154'
+loc2.longitude = '13.5128154'
+loc2.time = Time.now
+loc2.device = device2
+loc2.save
 
-loc1 = Location.new
-loc1.latitude = '21.4578154'
-loc1.longitude = '15.5478154'
-loc1.time = Time.now
-loc1.device = device2
-loc1.save
+loc3 = Location.new
+loc3.latitude = '21.4578154'
+loc3.longitude = '15.5478154'
+loc3.time = Time.now
+loc3.device = device2
+loc3.save
 
-loc1 = Location.new
-loc1.latitude = '20.4578154'
-loc1.longitude = '19.5478154'
-loc1.time = Time.now
-loc1.device = device2
-loc1.save
+loc4 = Location.new
+loc4.latitude = '20.4578154'
+loc4.longitude = '19.5478154'
+loc4.time = Time.now
+loc4.device = device3
+loc4.save
