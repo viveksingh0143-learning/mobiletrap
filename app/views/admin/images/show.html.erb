@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Uniqid:</strong>
+  <%= @image.uniqid %>
+</p>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @image.title %>
+</p>
+
+
+<p>
+  <strong>Capture:</strong>
+  <%= @image.capture %>
+</p>
+
+
+<p>
+  <strong>Url:</strong>
+  <%= @image.url %>
+</p>
+
+
+<p>
+  <strong>Device:</strong>
+  <%= @image.device.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_image_path(@image) %> |
+<%= link_to 'Back', admin_images_path %>
