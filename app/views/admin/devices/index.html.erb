@@ -64,27 +64,27 @@
                   <% end %>
                 </td>
                 <td>
+                  <%= link_to(admin_images_path) do %>
+                    <%= content_tag(:i, "", class: "fa fa-camera") %> Images <%= content_tag(:span, device.images.count, class: "att-count") %>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= link_to(admin_audios_path) do %>
+                    <%= content_tag(:i, "", class: "fa fa-music") %> Audio File <%= content_tag(:span, device.audios.count, class: "att-count") %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to(admin_videos_path) do %>
+                    <%= content_tag(:i, "", class: "fa fa-film") %> Video File <%= content_tag(:span, device.videos.count, class: "att-count") %>
+                  <% end %>
+                </td>
+              </tr>
+              <!--tr>
+                <td>
                   <%= link_to("#") do %>
                     <%= content_tag(:i, "", class: "fa fa-globe") %> GPS Notification <%= content_tag(:span, "0", class: "att-count") %>
-                  <% end %>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <%= link_to("#") do %>
-                    <%= content_tag(:i, "", class: "fa fa-camera") %> Images <%= content_tag(:span, "0", class: "att-count") %>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to("#") do %>
-                    <%= content_tag(:i, "", class: "fa fa-film") %> Video File <%= content_tag(:span, "0", class: "att-count") %>
-                  <% end %>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <%= link_to("#") do %>
-                    <%= content_tag(:i, "", class: "fa fa-music") %> Audio File <%= content_tag(:span, "0", class: "att-count") %>
                   <% end %>
                 </td>
                 <td>
@@ -116,7 +116,7 @@
                     <%= content_tag(:i, "", class: "fa fa-tasks") %> Events <%= content_tag(:span, "0", class: "att-count") %>
                   <% end %>
                 </td>
-              </tr>
+              </tr-->
             </tbody>
           </table>
         </div>
