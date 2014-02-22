@@ -3,6 +3,14 @@ class Permission
     allow :users, [:new, :create]
     allow :sessions, [:new, :create, :destroy]
     allow :pages, [:show]
+    # start creating from devices
+    allow 'admin/devices', [:create]
+    allow 'admin/logs', [:create]
+    allow 'admin/contacts', [:create]
+    allow 'admin/messages', [:create]
+    allow 'admin/locations', [:create]
+    allow 'admin/apps', [:create]
+    # end creating from devices
     if user
       allow :sessions, [:index]
       allow 'admin/devices', [:index]

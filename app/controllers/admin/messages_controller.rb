@@ -70,7 +70,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def message_params
-        params.require(:message).permit(:uniqid, :contact_id, :msg_type, :message, :time, :device_id)
+        params.require(:message).permit(:uniqid, :contact_id, :msg_type, :message, :time, :device_id, :device_imei)
       end
   end
 end

@@ -70,7 +70,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def log_params
-        params.require(:log).permit(:uniqid, :contact_id, :log_type, :time, :duration, :device_id)
+        params.require(:log).permit(:uniqid, :contact_id, :log_type, :time, :duration, :device_id, :device_imei)
       end
   end
 end

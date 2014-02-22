@@ -70,7 +70,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def contact_params
-        params.require(:contact).permit(:uniqid, :number, :name, :device_id)
+        params.require(:contact).permit(:uniqid, :number, :name, :device_id, :device_imei)
       end
   end
 end

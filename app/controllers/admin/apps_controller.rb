@@ -70,7 +70,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def app_params
-        params.require(:app).permit(:program, :version, :package, :device_id)
+        params.require(:app).permit(:program, :version, :package, :device_id, :device_imei)
       end
   end
 end
