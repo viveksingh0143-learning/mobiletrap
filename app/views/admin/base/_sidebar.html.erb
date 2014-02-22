@@ -29,32 +29,32 @@
     <%= content_tag(:i, "", class: "fa fa-briefcase") %> Installed App <%= content_tag(:span, App.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
-  <li>
+  <!--li>
   <%= link_to("#") do %>
     <%= content_tag(:i, "", class: "fa fa-globe") %> GPS Notification <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
   <% end %>
-  </li>
+  </li-->
   <li>
-  <%= link_to("#") do %>
-    <%= content_tag(:i, "", class: "fa fa-camera") %> Images <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
+  <%= link_to(admin_images_path(device_id: params[:device_id])) do %>
+    <%= content_tag(:i, "", class: "fa fa-camera") %> Images <%= content_tag(:span, Image.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to("#") do %>
-    <%= content_tag(:i, "", class: "fa fa-film") %> Video File <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
+  <%= link_to(admin_videos_path(device_id: params[:device_id])) do %>
+    <%= content_tag(:i, "", class: "fa fa-film") %> Video File <%= content_tag(:span, Video.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to("#") do %>
-    <%= content_tag(:i, "", class: "fa fa-music") %> Audio File <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
+  <%= link_to(admin_audios_path(device_id: params[:device_id])) do %>
+    <%= content_tag(:i, "", class: "fa fa-music") %> Audio File <%= content_tag(:span, Audio.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
-  <li>
+  <!--li>
   <%= link_to("#") do %>
     <%= content_tag(:i, "", class: "fa fa-comments") %> WhatsApp <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
   <% end %>
-  </li>
-  <li>
+  </li-->
+  <!--li>
   <%= link_to("#") do %>
     <%= content_tag(:i, "", class: "fa fa-globe") %> Browser History <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
   <% end %>
@@ -73,11 +73,11 @@
   <%= link_to("#") do %>
     <%= content_tag(:i, "", class: "fa fa-tasks") %> Events <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
   <% end %>
-  </li>
+  </li-->
   <% if current_user.admin? %>
     <li>
     <%= link_to(admin_users_path) do %>
-      <%= content_tag(:i, "", class: "fa fa-briefcase") %> Users <%= content_tag(:span, "#", class: "field-count btn btn-xs btn-black") %>
+      <%= content_tag(:i, "", class: "fa fa-briefcase") %> Users <%= content_tag(:span, User.count, class: "field-count btn btn-xs btn-black") %>
     <% end %>
     </li>
   <% end %>

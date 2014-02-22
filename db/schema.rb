@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110140029) do
+ActiveRecord::Schema.define(version: 20140123101058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20140110140029) do
   end
 
   add_index "apps", ["device_id"], name: "index_apps_on_device_id", using: :btree
+
+  create_table "audios", force: true do |t|
+    t.string   "uniqid"
+    t.string   "title"
+    t.datetime "capture"
+    t.string   "url"
+    t.integer  "device_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "audios", ["device_id"], name: "index_audios_on_device_id", using: :btree
 
   create_table "contacts", force: true do |t|
     t.string   "uniqid"
@@ -56,6 +68,18 @@ ActiveRecord::Schema.define(version: 20140110140029) do
 
   add_index "devices", ["imei"], name: "index_devices_on_imei", unique: true, using: :btree
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
+
+  create_table "images", force: true do |t|
+    t.string   "uniqid"
+    t.string   "title"
+    t.datetime "capture"
+    t.string   "url"
+    t.integer  "device_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["device_id"], name: "index_images_on_device_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "latitude"
@@ -118,5 +142,17 @@ ActiveRecord::Schema.define(version: 20140110140029) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username", "status"], name: "index_users_on_username_and_status", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "videos", force: true do |t|
+    t.string   "uniqid"
+    t.string   "title"
+    t.datetime "capture"
+    t.string   "url"
+    t.integer  "device_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "videos", ["device_id"], name: "index_videos_on_device_id", using: :btree
 
 end

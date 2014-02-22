@@ -4,6 +4,9 @@ class Device < ActiveRecord::Base
   has_many :locations
   has_many :logs
   has_many :messages
+  has_many :images
+  has_many :audios
+  has_many :videos
 
   belongs_to :user
   validates :name, presence: true

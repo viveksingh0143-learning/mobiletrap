@@ -1,0 +1,29 @@
+<div class="col-sm-6">
+<%= simple_form_for([:admin, @video], :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :uniqid, placeholder: 'Uniqid', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :title, placeholder: 'Title', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :capture, placeholder: 'Capture', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.input :url, placeholder: 'Url', input_html: { class: 'form-control' } %>
+  </div>
+        
+  <div class="form-group">
+    <%= f.association :device, label_method: :name, value_method: :id, include_blank: true, input_html: { class: 'form-control' } %>
+  </div>
+    
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

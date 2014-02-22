@@ -19,6 +19,9 @@ class Permission
       allow 'admin/messages', [:index]
       allow 'admin/locations', [:index]
       allow 'admin/apps', [:index]
+      allow 'admin/images', [:index]
+      allow 'admin/audios', [:index]
+      allow 'admin/videos', [:index]
       allow_all if user.admin?
       
 #      allow :topics, [:edit, :update] do |topic|

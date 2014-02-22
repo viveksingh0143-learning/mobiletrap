@@ -14,6 +14,9 @@ Mobiletrap::Application.routes.draw do
     resources :apps
     resources :contacts
     resources :locations
+    resources :images
+    resources :audios
+    resources :videos
   end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:index, :new, :create]

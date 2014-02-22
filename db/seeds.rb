@@ -71,6 +71,18 @@ device3.free_disk_space = '30 GB'
 device3.user = subscriber1
 device3.save
 
+device3 = Device.find_by_imei('123456784575') || Device.new
+device3.name = 'Sony Ericson'
+device3.imei = '123456784575'
+device3.serial_number = 'seria43'
+device3.devise_type = 'Android'
+device3.os = 'Android'
+device3.hardware_platform = 'Core INTEL'
+device3.total_memory = '2 GB'
+device3.total_disk = '150 GB'
+device3.free_disk_space = '60 GB'
+device3.save
+
 contact1 = Contact.find_by_uniqid('1') || Contact.new
 contact1.uniqid = '1'
 contact1.number = '9910896895'
