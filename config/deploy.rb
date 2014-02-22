@@ -3,7 +3,7 @@ require "bundler/capistrano"
 server "106.186.24.41", :web, :app, :db, primary: true
 
 set :application, "mobiletrap"
-set :user, "deployer"
+set :user, "vamika"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false

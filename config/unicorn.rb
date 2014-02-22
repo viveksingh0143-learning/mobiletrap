@@ -1,4 +1,4 @@
-root = "/home/deployer/apps/mobiletrap/current"
+root = "/home/vamika/apps/mobiletrap/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
