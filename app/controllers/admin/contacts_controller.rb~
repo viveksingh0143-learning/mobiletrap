@@ -30,8 +30,7 @@ module Admin
       respond_to do |format|
         if @contact.save
           format.html { redirect_to admin_contact_path(@contact), notice: 'Contact was successfully created.' }
-#          format.json { render action: 'show', status: :created, location: @contact }
-          format.json {render :json => { :success => :created}}
+          format.json { render action: 'show', status: :created, location: @contact }
         else
           format.html { render action: 'new' }
           format.json { render json: @contact.errors, status: :unprocessable_entity }

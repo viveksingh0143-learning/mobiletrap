@@ -5,7 +5,7 @@ class Contact < ActiveRecord::Base
   
   validates :device, presence: true
   
-  before_validation :set_device, on: :create
+  before_save :set_device
   
   def device_imei=(device_imei)
     @device_imei = device_imei

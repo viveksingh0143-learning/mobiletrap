@@ -30,12 +30,10 @@ module Admin
       respond_to do |format|
         if @video.save
           format.html { redirect_to admin_video_path(@video), notice: 'Video was successfully created.' }
-#          format.json { render action: 'show', status: :created, location: @video }
-          format.json {render :json => { :success => :created}}
+          format.json { render action: 'show', status: :created, location: @video }
         else
           format.html { render action: 'new' }
-#          format.json { render json: @video.errors, status: :unprocessable_entity }
-          format.json { render :json => {:errors => @video.errors, :success => :failed}, status: :unprocessable_entity }
+          format.json { render json: @video.errors, status: :unprocessable_entity }
         end
       end
     end

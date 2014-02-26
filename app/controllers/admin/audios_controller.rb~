@@ -30,8 +30,11 @@ module Admin
       respond_to do |format|
         if @audio.save
           format.html { redirect_to admin_audio_path(@audio), notice: 'Audio was successfully created.' }
-#          format.json { render action: 'show', status: :created, location: @audio }
+          format.json { render action: 'show', status: :created, location: @audio }
+          
           format.json {render :json => { :success => :created}}
+          format.json { render :json => {:errors => @device.errors, :success => :failed}, status: :unprocessable_entity }
+          
         else
           format.html { render action: 'new' }
 #          format.json { render json: @audio.errors, status: :unprocessable_entity }

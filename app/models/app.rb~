@@ -1,11 +1,10 @@
-class Contact < ActiveRecord::Base
+class App < ActiveRecord::Base
   belongs_to :device
-  has_many :logs
-  has_many :messages
+  validates :program, :presence => true, uniqueness: { case_sensitive: false, scope: :package, message: "should exists once per package" }
   
   validates :device, presence: true
   
-  before_validation :set_device, on: :create
+  before_validation :set_device
   
   def device_imei=(device_imei)
     @device_imei = device_imei
