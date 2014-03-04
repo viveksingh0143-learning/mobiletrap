@@ -4,6 +4,7 @@ Mobiletrap::Application.routes.draw do
   get 'signout',    to: 'sessions#destroy', as: :signout
   delete 'signout', to: 'sessions#destroy', as: :signout_delete
   get 'home',       to: 'sessions#index',   as: :dashboard
+  get 'reset',      to: 'sessions#reset',   as: :reset
 
   namespace :admin do
     resources :users

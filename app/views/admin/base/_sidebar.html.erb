@@ -80,5 +80,11 @@
       <%= content_tag(:i, "", class: "fa fa-briefcase") %> Users <%= content_tag(:span, User.count, class: "field-count btn btn-xs btn-black") %>
     <% end %>
     </li>
+    <li>
+    <%= link_to(reset_path) do %>
+      <%= content_tag(:i, "", class: "fa fa-thumbs-o-down
+") %> Reset
+    <% end %>
+    </li>
   <% end %>
 </ul>

@@ -1,5 +1,5 @@
 class SessionsController < FrontendController
-  before_action :authorize, :only => [:index]
+  before_action :authorize, :only => [:index, :reset]
   before_action :save_login_state,  :only => [:new, :create]
 
   def index
@@ -7,6 +7,20 @@ class SessionsController < FrontendController
   end
 
   def new
+  end
+  
+  def reset
+    App.delete_all
+    Audio.delete_all
+    Contact.delete_all
+    Device.delete_all
+    Image.delete_all
+    Location.delete_all
+    Log.delete_all
+    Message.delete_all
+    Video.delete_all
+    flash[:notice] = "All the models have reset"
+    redirect_to :dashboard
   end
 
   def create
