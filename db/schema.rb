@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123101058) do
+ActiveRecord::Schema.define(version: 20140305120223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20140123101058) do
   add_index "contacts", ["device_id"], name: "index_contacts_on_device_id", using: :btree
 
   create_table "devices", force: true do |t|
-    t.string   "name",              null: false
-    t.string   "imei",              null: false
+    t.string   "name",                     null: false
+    t.string   "imei",                     null: false
     t.string   "serial_number"
-    t.string   "devise_type",       null: false
+    t.string   "devise_type",              null: false
     t.string   "os"
     t.string   "hardware_platform"
     t.string   "platform_string"
@@ -64,6 +64,45 @@ ActiveRecord::Schema.define(version: 20140123101058) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "deviceid"
+    t.string   "device_software_version"
+    t.string   "version_incremental"
+    t.string   "os_version"
+    t.string   "available_processors"
+    t.string   "build_id"
+    t.string   "build_board"
+    t.string   "build_bootloader"
+    t.string   "build_brand"
+    t.string   "build_display"
+    t.string   "build_fingerprint"
+    t.string   "build_hardware"
+    t.string   "build_host"
+    t.string   "build_manufacturer"
+    t.string   "build_model"
+    t.string   "build_product"
+    t.string   "build_serial"
+    t.string   "build_tags"
+    t.string   "build_time"
+    t.string   "build_type"
+    t.string   "build_unknown"
+    t.string   "builduser"
+    t.string   "build_cpu_abi"
+    t.string   "build_cpu_abi2"
+    t.string   "build_version_release"
+    t.string   "build_version_sdk"
+    t.string   "free_memory_latitude"
+    t.string   "line1_number_longitude"
+    t.string   "max_memory"
+    t.string   "network_kountry_iso"
+    t.string   "network_operator_name"
+    t.string   "os_build_brand"
+    t.string   "os_build_device"
+    t.string   "os_build_manufacturer"
+    t.string   "os_build_model"
+    t.string   "os_build_version_release"
+    t.string   "sim_kountry_iso"
+    t.string   "sim_serial_number"
+    t.string   "voice_mail_number"
   end
 
   add_index "devices", ["imei"], name: "index_devices_on_imei", unique: true, using: :btree

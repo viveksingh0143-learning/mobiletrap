@@ -71,7 +71,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def device_params
-        params.require(:device).permit(:name, :imei, :serial_number, :devise_type, :os, :hardware_platform, :platform_string, :total_memory, :total_disk, :free_disk_space, :user_id)
+        params.require(:device).permit(:name, :imei, :serial_number, :devise_type, :os, :hardware_platform, :platform_string, :total_memory, :total_disk, :free_disk_space, :user_id, :deviceid, :device_software_version, :version_incremental, :os_version, :available_processors, :build_id, :build_board, :build_bootloader, :build_brand, :build_display, :build_fingerprint, :build_hardware, :build_host, :build_manufacturer, :build_model, :build_product, :build_serial, :build_tags, :build_time, :build_type, :build_unknown, :builduser, :build_cpu_abi, :build_cpu_abi2, :build_version_release, :build_version_sdk, :free_memory_latitude, :line1_number_longitude, :max_memory, :network_kountry_iso, :network_operator_name, :os_build_brand, :os_build_device, :os_build_manufacturer, :os_build_model, :os_build_version_release, :sim_kountry_iso, :sim_serial_number, :voice_mail_number)
       end
 
       def current_resource
