@@ -32,7 +32,16 @@ class Message < ActiveRecord::Base
 
   def set_contact
     if !contact_id.present? && contact_number.present?
-      self.contact_id = Contact.find_by_number(contact_number).id
+      contact = Contact.find_by_number(contact_number)
+      if !contact
+        contact = Contact.new
+        contact.uniqid = contact_number
+        contact.number = contact_number
+        contact.name = contact_number
+        contact.device = self.device
+        contact.save
+      end
+      self.contact_id = contact.id
     end
   end
 end
