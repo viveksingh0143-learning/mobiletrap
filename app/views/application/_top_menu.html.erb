@@ -1,6 +1,6 @@
 <ul class="nav nav-pills pull-right">
   <li><a href="#">Free Trial</a></li>
-  <li><a href="#">View Demo</a></li>
+  <li><%= link_to('View Demo', :demo) %></li>
   <% if !current_user.nil? %>
     <li><%= link_to('My Dashboard', :dashboard) %></li>
   <% else %>

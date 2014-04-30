@@ -1,6 +1,6 @@
 class SessionsController < FrontendController
   before_action :authorize, :only => [:index, :reset]
-  before_action :save_login_state,  :only => [:new, :create]
+  before_action :save_login_state,  :only => [:new, :create, :demo]
 
   def index
     redirect_to :admin_devices
@@ -8,7 +8,10 @@ class SessionsController < FrontendController
 
   def new
   end
-  
+
+  def demo
+  end
+
   def reset
     App.delete_all
     Audio.delete_all
@@ -31,7 +34,7 @@ class SessionsController < FrontendController
       redirect_to :root
     else
       flash[:notice] = "Invalid Username or Password"
-      render "new"  
+      render "new"
     end
   end
 

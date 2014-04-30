@@ -139,3 +139,43 @@ div.masthead .nav-pills > li > a:hover {
     border-bottom: 0;
   }
 }
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.glyphicon {
+  margin-right: 4px !important; /*override*/
+}
+.pagination .glyphicon {
+  margin-right: 0px !important; /*override*/
+}
+.pagination a {
+  color: #555;
+}
+.panel ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.news-item {
+  padding: 4px 4px;
+  margin: 0px;
+  border-bottom: 1px dotted #555;
+}
+.btn-nav {
+  margin-bottom: 20px;
+}
+.btn-nav > li > a:hover, .btn-nav > li > a:focus {
+  background-color: #6BF137 !important;
+}

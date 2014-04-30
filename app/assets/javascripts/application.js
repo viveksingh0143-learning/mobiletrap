@@ -18,4 +18,19 @@
 //= require twitter/bootstrap
 
 $(document).ready(function(){
+	$(".demo").bootstrapNews({
+		newsPerPage: 6,
+		navigation: true,
+		autoplay: true,
+		direction:'up', // up or down
+		animationSpeed: 'normal',
+		newsTickerInterval: 3000, //3 secs
+		pauseOnHover: true,
+		onStop: null,
+		onPause: null,
+		onReset: null,
+		onPrev: null,
+		onNext: null,
+		onToDo: null
+	});
 });

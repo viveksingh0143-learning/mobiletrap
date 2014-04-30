@@ -1,6 +1,7 @@
 Mobiletrap::Application.routes.draw do
   get 'signup',     to: 'users#new',        as: :signup
   get 'signin',     to: 'sessions#new',     as: :signin
+  get 'demo',       to: 'sessions#demo',    as: :demo
   get 'signout',    to: 'sessions#destroy', as: :signout
   delete 'signout', to: 'sessions#destroy', as: :signout_delete
   get 'home',       to: 'sessions#index',   as: :dashboard
@@ -28,7 +29,7 @@ Mobiletrap::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#new'
+  root :to => "pages#show", :id => 'how-to-use'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
