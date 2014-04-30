@@ -3,7 +3,6 @@
   <thead>
     <tr>
       <th>Program</th>
-      <th>Version</th>
       <th>Package</th>
       <% if current_user.admin %>
       <th>Device</th>
@@ -16,7 +15,6 @@
     <% @apps.each do |app| %>
       <tr>
         <td><%= app.program %></td>
-        <td><%= app.version %></td>
         <td><%= app.package %></td>
         <% if current_user.admin %>
         <td><%= app.device.name %></td>

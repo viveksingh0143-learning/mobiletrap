@@ -19,7 +19,7 @@
     <% @logs.each do |log| %>
       <tr>
         <td><%= log.log_type %></td>
-        <td><%= log.time %></td>
+        <td><%= log.time.strftime("%d %B %Y %H:%M") %></td>
         <td><%= log.contact.name %></td>
         <td><%= log.contact.number %></td>
         <td><%= log.duration %></td>

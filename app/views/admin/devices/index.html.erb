@@ -35,48 +35,48 @@
             <tbody>
               <tr>
                 <td>
-                  <%= link_to(admin_logs_path) do %>
+                  <%= link_to(admin_logs_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-phone") %> Call History <%= content_tag(:span, device.logs.count, class: "att-count") %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to(admin_contacts_path) do %>
+                  <%= link_to(admin_contacts_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-book") %> Address Book <%= content_tag(:span, device.contacts.count, class: "att-count") %>
                   <% end %>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <%= link_to(admin_messages_path) do %>
+                  <%= link_to(admin_messages_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-comment") %> SMS History <%= content_tag(:span, device.messages.count, class: "att-count") %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to(admin_locations_path) do %>
+                  <%= link_to(admin_locations_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-map-marker") %> GPS Location <%= content_tag(:span, device.locations.count, class: "att-count") %>
                   <% end %>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <%= link_to(admin_apps_path) do %>
+                  <%= link_to(admin_apps_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-briefcase") %> Installed App <%= content_tag(:span, device.apps.count, class: "att-count") %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to(admin_images_path) do %>
+                  <%= link_to(admin_images_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-camera") %> Images <%= content_tag(:span, device.images.count, class: "att-count") %>
                   <% end %>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <%= link_to(admin_audios_path) do %>
+                  <%= link_to(admin_audios_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-music") %> Audio File <%= content_tag(:span, device.audios.count, class: "att-count") %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to(admin_videos_path) do %>
+                  <%= link_to(admin_videos_path(device_id: device.id, start_time: params[:start_time], end_time: params[:end_time])) do %>
                     <%= content_tag(:i, "", class: "fa fa-film") %> Video File <%= content_tag(:span, device.videos.count, class: "att-count") %>
                   <% end %>
                 </td>

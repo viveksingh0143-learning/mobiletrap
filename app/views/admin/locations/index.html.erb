@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Address</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Time</th>
@@ -16,9 +17,10 @@
   <tbody>
     <% @locations.each do |location| %>
       <tr>
+        <td><%= location.address %></td>
         <td><%= location.latitude %></td>
         <td><%= location.longitude %></td>
-        <td><%= location.time %></td>
+        <td><%= location.time.strftime("%d %B %Y %H:%M") %></td>
         <% if current_user.admin %>
         <td><%= location.device.name %></td>
         <td><%= link_to 'Show', admin_location_path(location) %></td>

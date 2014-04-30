@@ -4,6 +4,12 @@ class Location < ActiveRecord::Base
   validates :device, presence: true
   
   before_validation :set_device, on: :create
+
+  geocoded_by :address        # can also be an IP address
+  after_validation :geocode   # auto-fetch coordinates
+
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode  # auto-fetch address
   
   def device_imei=(device_imei)
     @device_imei = device_imei

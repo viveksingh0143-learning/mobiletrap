@@ -6,6 +6,15 @@ module Admin
     # GET /messages.json
     def index
       @messages ||= Message.where(device_id: selected_device)
+      unless params[:start_time].blank?
+        start_date = DateTime.parse("#{params[:start_time]} 00:00:00")
+        @messages = @messages.where("created_at >= :start_time", {start_time: start_date})
+      end
+
+      unless params[:end_time].blank?
+        end_date = DateTime.parse("#{params[:end_time]} 23:59:59")
+        @messages = @messages.where("created_at <= :end_time", {end_time: end_date})
+      end
     end
 
     # GET /messages/1

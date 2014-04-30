@@ -5,7 +5,16 @@ module Admin
     # GET /apps
     # GET /apps.json
     def index
-      @apps = App.all
+      @apps ||= App.where(device_id: selected_device)
+      unless params[:start_time].blank?
+        start_date = DateTime.parse("#{params[:start_time]} 00:00:00")
+        @apps = @apps.where("created_at >= :start_time", {start_time: start_date})
+      end
+
+      unless params[:end_time].blank?
+        end_date = DateTime.parse("#{params[:end_time]} 23:59:59")
+        @apps = @apps.where("created_at <= :end_time", {end_time: end_date})
+      end
     end
 
     # GET /apps/1

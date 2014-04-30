@@ -5,27 +5,27 @@
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_logs_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_logs_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-phone") %> Call History <%= content_tag(:span, Log.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_contacts_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_contacts_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-book") %> Address Book <%= content_tag(:span, Contact.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_messages_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_messages_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-comment") %> SMS History <%= content_tag(:span, Message.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_locations_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_locations_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-map-marker") %> GPS Location <%= content_tag(:span, Location.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_apps_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_apps_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-briefcase") %> Installed App <%= content_tag(:span, App.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
@@ -35,17 +35,17 @@
   <% end %>
   </li-->
   <li>
-  <%= link_to(admin_images_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_images_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-camera") %> Images <%= content_tag(:span, Image.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_videos_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_videos_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-film") %> Video File <%= content_tag(:span, Video.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
   <li>
-  <%= link_to(admin_audios_path(device_id: params[:device_id])) do %>
+  <%= link_to(admin_audios_path(device_id: params[:device_id], start_time: params[:start_time], end_time: params[:end_time])) do %>
     <%= content_tag(:i, "", class: "fa fa-music") %> Audio File <%= content_tag(:span, Audio.where(device_id: selected_device).count, class: "field-count btn btn-xs btn-black") %>
   <% end %>
   </li>
