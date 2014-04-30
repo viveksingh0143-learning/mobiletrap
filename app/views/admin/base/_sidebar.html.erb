@@ -80,6 +80,7 @@
       <%= content_tag(:i, "", class: "fa fa-briefcase") %> Users <%= content_tag(:span, User.count, class: "field-count btn btn-xs btn-black") %>
     <% end %>
     </li>
+    <li><%= link_to "Pages", admin_pages_path %></li>
     <li>
     <%= link_to(reset_path) do %>
       <%= content_tag(:i, "", class: "fa fa-thumbs-o-down
