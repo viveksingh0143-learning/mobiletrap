@@ -250,5 +250,5 @@
   <%= @device.user.username if @device.user %>
 </p>
 
-<%= link_to 'Edit', edit_admin_device_path(@device) %> |
-<%= link_to 'Back', admin_devices_path %>
+<%= link_to 'Edit', edit_admin_device_path(@device), class: 'btn btn-success' %> |
+<%= link_to 'Back', admin_devices_path, class: 'btn btn-success' %>

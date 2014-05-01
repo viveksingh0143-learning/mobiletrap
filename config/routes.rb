@@ -1,4 +1,5 @@
 Mobiletrap::Application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   get 'signup',     to: 'users#new',        as: :signup
   get 'signin',     to: 'sessions#new',     as: :signin
   get 'demo',       to: 'sessions#demo',    as: :demo

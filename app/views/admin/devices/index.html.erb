@@ -143,9 +143,9 @@
               <tr>
                 <td><span class="att-label">User:</span><%= device.user.username if device.user %></td>
                 <td colspan="2">
-                  <%= link_to 'Show', admin_device_path(device) %><span class="n-space"></span>
-                  <%= link_to 'Edit', edit_admin_device_path(device) %><span class="n-space"></span>
-                  <%= link_to 'Destroy', admin_device_path(device), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Show', admin_device_path(device), class: 'btn btn-success' %><span class="n-space"></span>
+                  <%= link_to 'Edit', edit_admin_device_path(device), class: 'btn btn-success' %><span class="n-space"></span>
+                  <%= link_to 'Destroy', admin_device_path(device), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>
                 </td>
               </tr>
             <% end %>

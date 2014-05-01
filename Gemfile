@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'net-ssh', '~> 2.7.0'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2', :require => "bcrypt"
 
@@ -66,6 +68,8 @@ gem "font-awesome-rails"
 gem "geocoder"
 
 gem "gmaps4rails"
+
+gem 'bootsy'
 
 group :development do
   gem 'better_errors'
