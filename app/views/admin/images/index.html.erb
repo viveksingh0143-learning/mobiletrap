@@ -32,5 +32,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Image', new_admin_image_path %>
+<% if current_user.admin %>
+<%= link_to 'New Image', new_admin_image_path, class: 'btn btn-success' %>
+<% end %>

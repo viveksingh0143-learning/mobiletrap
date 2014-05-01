@@ -33,5 +33,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Video', new_admin_video_path %>
+<% if current_user.admin %>
+<%= link_to 'New Video', new_admin_video_path, class: 'btn btn-success' %>
+<% end %>

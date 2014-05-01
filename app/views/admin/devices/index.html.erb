@@ -1,6 +1,6 @@
 <h3 class="page-title"><%= pluralize( @devices.size, 'Phone' ) %> on Dashboard <span class="n-space"></span>
-<% if current_user.admin %>
-  <%= link_to 'New Device', new_admin_device_path %>
+  <% if current_user.admin %>
+  <%= link_to 'New Device', new_admin_device_path, class: 'btn btn-success' %>
 <% end %>
 </h3>
 <% @devices.each do |device| %>

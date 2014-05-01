@@ -33,5 +33,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Audio', new_admin_audio_path %>
+<% if current_user.admin %>
+<%= link_to 'New Audio', new_admin_audio_path, class: 'btn btn-success' %>
+<% end %>
