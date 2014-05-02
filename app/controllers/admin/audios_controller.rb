@@ -21,6 +21,13 @@ module Admin
     # GET /audios/1.json
     def show
     end
+
+    # GET /audios/1/display
+    # GET /audios/1/display
+    def display
+      @audio = Audio.find(params[:video_id])
+      send_file @audio.url_url.to_s, :disposition => 'inline', :type=>"application/audio", :x_sendfile=>true
+    end
   
     # GET /audios/new
     def new
@@ -81,7 +88,7 @@ module Admin
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def audio_params
-        params.require(:audio).permit(:uniqid, :title, :capture, :url, :reference, :device_imei)
+        params.require(:audio).permit(:uniqid, :title, :capture, :url, :reference, :device_id, :device_imei)
       end
   end
 end

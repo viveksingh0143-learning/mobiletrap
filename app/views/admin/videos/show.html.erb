@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @video.url %>
+  <strong>Video:</strong>
+  <%= video_tag admin_video_display_path(@video.id, :size => "320x240", :controls => true, :autobuffer => true) %>
 </p>
 
 <p>

@@ -21,6 +21,13 @@ module Admin
     # GET /videos/1.json
     def show
     end
+
+    # GET /videos/1/display
+    # GET /videos/1/display
+    def display
+      @video = Video.find(params[:video_id])
+      send_file @video.url_url.to_s, :disposition => 'inline', :type=>"application/video", :x_sendfile=>true
+    end
   
     # GET /videos/new
     def new
@@ -81,7 +88,7 @@ module Admin
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def video_params
-        params.require(:video).permit(:uniqid, :title, :capture, :url, :reference, :device_imei)
+        params.require(:video).permit(:uniqid, :title, :capture, :url, :reference, :device_id, :device_imei)
       end
   end
 end

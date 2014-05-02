@@ -21,6 +21,13 @@ module Admin
     # GET /images/1.json
     def show
     end
+
+    # GET /images/1/display/thumb
+    # GET /images/1/display/thumb.json
+    def display
+      @image = Image.find(params[:image_id])
+      send_file @image.url_url(params[:version]).to_s, :disposition => 'inline', :type=>"application/jpg", :x_sendfile=>true
+    end
   
     # GET /images/new
     def new
@@ -81,7 +88,7 @@ module Admin
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def image_params
-        params.require(:image).permit(:uniqid, :title, :capture, :url, :reference, :device_imei)
+        params.require(:image).permit(:uniqid, :title, :capture, :url, :reference, :device_id, :device_imei)
       end
   end
 end

@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-
 <p>
   <strong>Uniqid:</strong>
   <%= @image.uniqid %>
 </p>
-
 
 <p>
   <strong>Title:</strong>
   <%= @image.title %>
 </p>
 
-
 <p>
   <strong>Capture:</strong>
   <%= @image.capture %>
 </p>
 
-
 <p>
-  <strong>Url:</strong>
-  <%= @image.url %>
+  <strong>Image:</strong>
+  <%= image_tag admin_image_display_path(@image.id, :thumb) %>
 </p>
-
 
 <p>
   <strong>Device:</strong>

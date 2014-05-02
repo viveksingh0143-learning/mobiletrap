@@ -1,9 +1,9 @@
 class Audio < ActiveRecord::Base
   belongs_to :device
-  
   validates :device, presence: true
-  
   before_validation :set_device, on: :create
+
+  mount_uploader :url, AudioUploader
  
   def device_imei=(device_imei)
     @device_imei = device_imei
