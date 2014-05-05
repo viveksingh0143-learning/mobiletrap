@@ -84,6 +84,8 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    jwplayer-rails (1.0.1)
+      railties (>= 3.1.1)
     kgio (2.9.2)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -180,6 +182,7 @@ DEPENDENCIES
   gmaps4rails
   jbuilder (~> 1.2)
   jquery-rails
+  jwplayer-rails
   mini_magick
   net-ssh (~> 2.7.0)
   pg

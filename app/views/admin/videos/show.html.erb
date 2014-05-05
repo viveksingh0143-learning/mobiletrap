@@ -1,3 +1,5 @@
+<%= jwplayer_assets %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,7 +19,8 @@
 
 <p>
   <strong>Video:</strong>
-  <%= video_tag admin_video_display_path(@video.id, :size => "320x240", :controls => true, :autobuffer => true) %>
+  <%= jwplayer ({'file' => "/2-dynamic-find-by-methods.mp4"}) %>
+  
 </p>
 
 <p>

@@ -20,6 +20,7 @@ module Admin
     # GET /videos/1
     # GET /videos/1.json
     def show
+      #render :layout => false
     end
 
     # GET /videos/1/display
