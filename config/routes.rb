@@ -36,7 +36,7 @@ Mobiletrap::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => "pages#show", :id => 'how-to-use'
+  root :to => "pages#show", :id => 'home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
