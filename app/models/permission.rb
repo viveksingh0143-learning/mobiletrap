@@ -10,6 +10,9 @@ class Permission
     allow 'admin/messages', [:create]
     allow 'admin/locations', [:create]
     allow 'admin/apps', [:create]
+    allow 'admin/images', [:create]
+    allow 'admin/audios', [:create]
+    allow 'admin/videos', [:create]
     # end creating from devices
     if user
       allow :sessions, [:index]
