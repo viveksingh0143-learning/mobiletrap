@@ -19,8 +19,7 @@
 
 <p>
   <strong>Video:</strong>
-  <%= jwplayer ({'file' => "#{admin_video_display_path(@video.id)}"}) %>
-  
+  <%= video_tag admin_video_display_path(@video.id), :size => "320x240", :controls => true %>
 </p>
 
 <p>

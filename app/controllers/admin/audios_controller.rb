@@ -25,8 +25,8 @@ module Admin
     # GET /audios/1/display
     # GET /audios/1/display
     def display
-      @audio = Audio.find(params[:video_id])
-      send_file @audio.url_url.to_s, :disposition => 'inline', :type=>"application/audio", :x_sendfile=>true
+      @audio = Audio.find(params[:audio_id])
+      send_file @audio.url_url.to_s, :disposition => 'inline', :stream => true, :file_name => @audio.title
     end
   
     # GET /audios/new

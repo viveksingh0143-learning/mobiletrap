@@ -27,7 +27,8 @@ module Admin
     # GET /videos/1/display
     def display
       @video = Video.find(params[:video_id])
-      send_file @video.url_url.to_s, :disposition => 'inline', :type=>"application/video", :x_sendfile=>true
+#      send_file @video.url_url.to_s, :disposition => 'inline', :type=>"application/video", :x_sendfile=>true
+      send_file(@video.url_url.to_s, :disposition => 'inline', :stream => true, :file_name => @video.title)
     end
   
     # GET /videos/new
