@@ -43,12 +43,13 @@
       </div>
 
       <div class="row-fluid">
-        <div class="col-sm-6 col-md-8">
+        <div class="col-sm-9" id="body-area">
           <%= flash_messages %>
           <%= yield %>
         </div>
 
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-3" id="side-area">
+          <%= yield(:sidebar_area) %>
           <ul class="nav nav-pills nav-stacked btn-nav">
             <li><%= link_to('View Demo', :demo, class: "btn btn-success btn-lg btn-block") %></li>
           </ul>
