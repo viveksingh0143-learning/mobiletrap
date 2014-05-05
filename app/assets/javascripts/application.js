@@ -20,8 +20,8 @@
 
 $(document).ready(function(){
 	$(".demo").bootstrapNews({
-		newsPerPage: 6,
-		navigation: true,
+		newsPerPage: 3,
+		navigation: false,
 		autoplay: true,
 		direction:'up', // up or down
 		animationSpeed: 'normal',
