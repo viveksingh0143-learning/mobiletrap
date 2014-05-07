@@ -15,10 +15,6 @@ div.body-content-blank {
   min-height: 430px;
 }
 
-.footer {
-  margin-top: 15px;
-}
-
 div.top-green-line {
   background-color: #347a00;
   height: 3px;
@@ -72,8 +68,7 @@ div.masthead .nav-pills > li > a:hover {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
-.footer {
+.marketing {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -85,13 +80,6 @@ div.masthead .nav-pills > li > a:hover {
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 0px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 /* Customize container */
@@ -126,8 +114,7 @@ div.masthead .nav-pills > li > a:hover {
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
-  .footer {
+  .marketing {
     padding-left: 0;
     padding-right: 0;
   }
@@ -192,6 +179,7 @@ img {
 .footer-area {
   color: #556262;
   background-color: #121412;
+  margin-top: 20px;
 }
 .copyright-line {
   background-color:#000000;
