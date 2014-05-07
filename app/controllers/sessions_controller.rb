@@ -13,15 +13,18 @@ class SessionsController < FrontendController
   end
 
   def reset
-    App.delete_all
+    #App.delete_all
+    #Contact.delete_all
+    #Device.delete_all
+    #Location.delete_all
+    #Log.delete_all
+    #Message.delete_all
     Audio.delete_all
-    Contact.delete_all
-    Device.delete_all
     Image.delete_all
-    Location.delete_all
-    Log.delete_all
-    Message.delete_all
     Video.delete_all
+    Location.all.each do |location|
+      location.save
+    end
     flash[:notice] = "All the models have reset"
     redirect_to :dashboard
   end
