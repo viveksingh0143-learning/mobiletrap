@@ -22,11 +22,11 @@ class Permission
       allow 'admin/messages', [:index]
       allow 'admin/locations', [:index]
       allow 'admin/apps', [:index]
-      allow 'admin/images', [:index]
-      allow 'admin/audios', [:index]
-      allow 'admin/videos', [:index]
+      allow 'admin/images', [:index, :display]
+      allow 'admin/audios', [:index, :display]
+      allow 'admin/videos', [:index, :display]
       allow_all if user.admin?
-      
+
 #      allow :topics, [:edit, :update] do |topic|
 #        topic.user_id == user.id
 #      end
