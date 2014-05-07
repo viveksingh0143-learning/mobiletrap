@@ -1,6 +1,6 @@
 @import "font-awesome";
 body {
-  padding-bottom: 40px;
+  /*padding-bottom: 40px;*/
   background-image: url(/assets/img/body-bg.jpg);
   background-repeat: repeat-x;
   background-position: top;
@@ -188,4 +188,27 @@ div.masthead .nav-pills > li > a:hover {
 }
 img {
   max-width: 100%;
+}
+.footer-area {
+  color: #556262;
+  background-color: #121412;
+}
+.copyright-line {
+  background-color:#000000;
+  color: #CCCCCC;
+}
+.copyright-line p {
+  padding-top: 10px;
+}
+.footer-head {
+  color: #367500;
+}
+.footer-area .nav > li > a {
+  padding: 0px;
+}
+.footer-area a {
+  color: #556262;
+}
+.slight-margin {
+  margin-top: 10px;
 }

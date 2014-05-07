@@ -77,11 +77,76 @@
       </div>
     </div> <!-- /container -->
 
-    <div class="container">
+    <div class="container footer-area">
       <div class="footer">
-        <p>&copy; Company 2013</p>
+        <div class="col-sm-3">
+          <%= link_to image_tag("img/logo.png", style: 'max-width: 100%;'), root_url %>
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-12">&copy; Company 2013</div>
       </div>
     </div>
+
+    <div class="container-fluid footer-area">
+      <div class="container footer">
+        <div class="row">
+          <div class="col-sm-3">
+            <h2><%= link_to image_tag("img/logo.png", style: 'max-width: 100%;'), root_url %></h2>
+            <p>Mobile Trap is one of the  cutting edge cell phone trackers. It can run on Androids, smart phones, as well as tablets.</p>
+          </div>
+          <div class="col-sm-3">
+            <h3 class="footer-head">Features</h3>
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="pages/support">GPS Location</a></li>
+              <li><a href="pages/support">SMS History</a></li>
+              <li><a href="pages/support">Call History</a></li>
+              <li><a href="pages/support">E-mail History</a></li>
+              <li><a href="pages/support">Browser History</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h3 class="footer-head">Services</h3>
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="pages/support">GPS Location</a></li>
+              <li><a href="pages/support">SMS History</a></li>
+              <li><a href="pages/support">Call History</a></li>
+              <li><a href="pages/support">E-mail History</a></li>
+              <li><a href="pages/support">Browser History</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h3 class="footer-head">Recent Links</h3>
+            <ul class="nav nav-stacked">
+              <li><a href="pages/support">How does it work?</a></li>
+              <li><a href="pages/support">Monitor Children</a></li>
+              <li><a href="pages/support">What’s New at MT</a></li>
+              <li><a href="pages/support">Supervise Employees</a></li>
+              <li><a href="pages/support">Back up Data</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row slight-margin">
+          <div class="col-sm-6">
+            <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a> 
+            <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+            <a href="#"><i class="fa fa-2x fa-youtube-square"></i></a>
+            <a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+            <a href="#"><i class="fa fa-2x fa-google-plus-square"></i></a>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid copyright-line">
+      <p class="text-center">&copy; Company 2013</p>
+    </div>
+
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>
