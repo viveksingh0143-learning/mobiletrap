@@ -5,7 +5,7 @@ module Admin
     # GET /images
     # GET /images.json
     def index
-      @images ||= Image.where(device_id: selected_device)
+      @images ||= Image.where(device_id: selected_device).order(created_at: :desc)
       unless params[:start_time].blank?
         start_date = DateTime.parse("#{params[:start_time]} 00:00:00")
         @images = @images.where("created_at >= :start_time", {start_time: start_date})

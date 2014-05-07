@@ -5,7 +5,7 @@ module Admin
     # GET /logs
     # GET /logs.json
     def index
-      @logs ||= Log.where(device_id: selected_device)
+      @logs ||= Log.where(device_id: selected_device).order(created_at: :desc)
       unless params[:start_time].blank?
         start_date = DateTime.parse("#{params[:start_time]} 00:00:00")
         @logs = @logs.where("created_at >= :start_time", {start_time: start_date})

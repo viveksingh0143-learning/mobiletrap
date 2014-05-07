@@ -5,7 +5,7 @@ module Admin
     # GET /messages
     # GET /messages.json
     def index
-      @messages ||= Message.where(device_id: selected_device)
+      @messages ||= Message.where(device_id: selected_device).order(created_at: :desc)
       unless params[:start_time].blank?
         start_date = DateTime.parse("#{params[:start_time]} 00:00:00")
         @messages = @messages.where("created_at >= :start_time", {start_time: start_date})
