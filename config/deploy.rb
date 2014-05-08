@@ -63,6 +63,3 @@ namespace :deploy do
   end
   before "deploy", "deploy:check_revision"
 end
-
-ln -nfs /home/vamika/apps/mobiletrap/shared/public/uploads/bootsy /home/vamika/apps/mobiletrap/releases/20140508045824/public/uploads/bootsy
-
