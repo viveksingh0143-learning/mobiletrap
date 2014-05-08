@@ -29,9 +29,7 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
-    run "mkdir -p #{shared_path}/uploads"
-    run "mkdir -p #{shared_path}/public/uploads"
-    run "mkdir -p #{shared_path}/public/uploads/bootsy"
+    run "mkdir -p #{shared_path}/resources"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
@@ -42,10 +40,10 @@ namespace :deploy do
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 
-  task :symlink_uploads, roles: :app do
-    run "ln -nfs #{shared_path}/uploads #{release_path}/uploads"
+  task :symlink_resources, roles: :app do
+    run "ln -nfs #{shared_path}/resources #{release_path}/resources"
   end
-  after "deploy:finalize_update", "deploy:symlink_uploads"
+  after "deploy:finalize_update", "deploy:symlink_resources"
 
   task :symlink_bootsy_uploads, roles: :app do
     #run "mkdir -p #{release_path}/public/uploads"
