@@ -48,8 +48,8 @@ namespace :deploy do
   after "deploy:finalize_update", "deploy:symlink_uploads"
 
   task :symlink_bootsy_uploads, roles: :app do
-    run "mkdir -p #{release_path}/public/uploads"
-    run "ln -nfs #{shared_path}/public/uploads/bootsy #{release_path}/public/uploads/bootsy"
+    #run "mkdir -p #{release_path}/public/uploads"
+    #run "ln -nfs #{shared_path}/public/uploads/bootsy #{release_path}/public/uploads/bootsy"
   end
   after "deploy:finalize_update", "deploy:symlink_bootsy_uploads"
 
