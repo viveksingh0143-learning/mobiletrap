@@ -53,6 +53,7 @@ div.masthead .nav-pills > li > a:hover {
   background-color: #FFFFFF;
   padding: 8px;
   margin-bottom: 15px;
+  border-bottom: #398439 solid 3px;
 }
 .page-title h2 {
   color: #5d9042;
@@ -190,13 +191,25 @@ img {
 }
 .footer-head {
   color: #367500;
+  font-size: 18px;
+  border-bottom: solid 1px;
+  width: 60%;
 }
 .footer-area .nav > li > a {
   padding: 0px;
 }
 .footer-area a {
   color: #556262;
+  font-size: 12px;
 }
 .slight-margin {
   margin-top: 10px;
+}
+
+.btn-nav>li>a:hover, .btn-nav>li>a:focus {
+  background-color: #FFFFFF !important;
+  color: #1D6600;
+}
+#side-area {
+  padding-top: 20px;
 }
