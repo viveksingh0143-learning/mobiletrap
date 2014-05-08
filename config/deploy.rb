@@ -31,7 +31,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
     run "mkdir -p #{shared_path}/uploads"
     run "mkdir -p #{shared_path}/public/uploads"
-    run "mkdir -p #{shared_path}/public/uploads/bootsy"
+#    run "mkdir -p #{shared_path}/public/uploads/bootsy"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
@@ -49,7 +49,7 @@ namespace :deploy do
 
   task :symlink_bootsy_uploads, roles: :app do
     run "mkdir -p #{release_path}/public/uploads/bootsy"
-    run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads/bootsy"
+    run "ln -nfs #{shared_path}/public/uploads/bootsy #{release_path}/public/uploads/bootsy"
   end
   after "deploy:finalize_update", "deploy:symlink_bootsy_uploads"
 
