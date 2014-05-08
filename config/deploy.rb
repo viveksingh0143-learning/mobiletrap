@@ -49,7 +49,7 @@ namespace :deploy do
 
   task :symlink_bootsy_uploads, roles: :app do
 #    run "mkdir -p #{release_path}/public/uploads/bootsy"
-    run "ln -nfs #{shared_path}/public/uploads/bootsy #{release_path}/public/uploads/bootsy"
+    run "ln -nfs #{shared_path}/public/uploads/bootsy #{current_path}/public/uploads/bootsy"
   end
   after "deploy:finalize_update", "deploy:symlink_bootsy_uploads"
 
@@ -63,3 +63,6 @@ namespace :deploy do
   end
   before "deploy", "deploy:check_revision"
 end
+
+ln -nfs /home/vamika/apps/mobiletrap/shared/public/uploads/bootsy /home/vamika/apps/mobiletrap/releases/20140508045824/public/uploads/bootsy
+
