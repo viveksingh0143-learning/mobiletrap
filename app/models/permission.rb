@@ -3,6 +3,8 @@ class Permission
     allow :users, [:new, :create]
     allow :sessions, [:new, :create, :destroy]
     allow :pages, [:show]
+    allow 'admin/forms', [:new, :create]
+    allow 'contactus', [:new, :create]
     # start creating from devices
     allow 'admin/devices', [:create]
     allow 'admin/logs', [:create]

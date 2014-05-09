@@ -85,6 +85,13 @@
       <%= content_tag(:i, "", class: "fa fa-book") %> Pages <%= content_tag(:span, Page.count, class: "field-count btn btn-xs btn-black") %>
     <% end %>
     </li>
+    
+    <li>
+    <%= link_to(admin_forms_path) do %>
+      <%= content_tag(:i, "", class: "fa fa-comment") %> Forms <%= content_tag(:span, Form.count, class: "field-count btn btn-xs btn-black") %>
+    <% end %>
+    </li>
+
     <li>
     <%= link_to(reset_path) do %>
       <%= content_tag(:i, "", class: "fa fa-thumbs-o-down

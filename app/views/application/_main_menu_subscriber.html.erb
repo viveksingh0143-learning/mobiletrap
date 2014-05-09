@@ -1,5 +1,6 @@
 <ul class="nav nav-pills pull-right">
   <li><%= link_to "Home", "/" %></li>
+  <li><%= link_to "Contact Us", contactus_path %></li>
   <li>
     <%=
        link_to_if(current_user.nil?, "Sign In", :signin,  method: :get) do

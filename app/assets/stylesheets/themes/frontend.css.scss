@@ -213,3 +213,11 @@ img {
 #side-area {
   padding-top: 20px;
 }
+ul.wysihtml5-toolbar {
+  list-style: none;
+  padding-left: 0px;
+}
+
+ul.wysihtml5-toolbar li{
+  float: left;
+}

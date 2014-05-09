@@ -7,10 +7,13 @@ Mobiletrap::Application.routes.draw do
   delete 'signout', to: 'sessions#destroy', as: :signout_delete
   get 'home',       to: 'sessions#index',   as: :dashboard
   get 'reset',      to: 'sessions#reset',   as: :reset
+  get '/contactus',:to => 'admin/forms#new', :as => 'contactus'
+    
 
   namespace :admin do
     resources :users
     resources :pages
+    resources :forms, only: [:create, :new, :index, :show]
     resources :devices
     resources :messages
     resources :logs
