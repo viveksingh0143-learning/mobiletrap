@@ -17,6 +17,8 @@
 //= require bootsy
 //= require_tree .
 //= require twitter/bootstrap
+//= require underscore
+//= require gmaps/google
 
 $(document).ready(function(){
 	$(".demo").bootstrapNews({

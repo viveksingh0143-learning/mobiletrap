@@ -67,6 +67,8 @@ gem "font-awesome-rails"
 
 gem "geocoder"
 
+gem 'underscore-rails'
+
 gem "gmaps4rails"
 
 gem 'bootsy'

@@ -15,6 +15,11 @@ module Admin
         end_date = DateTime.parse("#{params[:end_time]} 23:59:59")
         @locations = @locations.where("created_at <= :end_time", {end_time: end_date})
       end
+      @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+        marker.lat location.latitude
+        marker.lng location.longitude
+        marker.json({ infowindow: location.address, name: location.time.strftime("%d-%m-%Y %H:%M") })
+      end
     end
 
     # GET /locations/1
