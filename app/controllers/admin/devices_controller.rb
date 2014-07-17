@@ -1,6 +1,7 @@
 module Admin
   class DevicesController < BaseController
     before_action :set_device, only: [:show, :edit, :update, :destroy]
+    before_action :insertOrUpdateUser, only: [:create]
 
     # GET /devices
     # GET /devices.json
@@ -26,11 +27,7 @@ module Admin
     # POST /devices.json
     def create
       @device = Device.new(device_params)
-      @device_user = insertOrUpdateUser
-      if @device_user
-        @device.user = @device_user
-      end
-
+      @device.user_id = @user.id if @user
       respond_to do |format|
         if @device.save
           format.html { redirect_to admin_device_path(@device), notice: 'Device was successfully created.' }
@@ -74,26 +71,16 @@ module Admin
       end
 
       def insertOrUpdateUser
-        @result = false
-        if params[:username].blank?
-          @result = User.find_by username: params[:username] || false
-          if @result
-            if !@result.update(user_params)
-              result = false
-            end
-          else
-            @result = User.new(user_params)
-            @result.password = "p@ssw0rd_#{user_params[:username]}"
-            @result.password_confirmation = "p@ssw0rd_#{user_params[:username]}"
-            if !@result.save
-              result = false
-            end
+        if !user_params[:username].blank?
+          @user = User.find_by_username(user_params[:username])
+          @user.update(user_params) if @user
+          unless @user
+            @user = User.new(user_params)
+            @user.password = "p@ssw0rd_#{user_params[:username]}"
+            @user.password_confirmation = "p@ssw0rd_#{user_params[:username]}"
+            @user.save
           end
-        else
-          puts "Username not found"
         end
-        puts "Hi #{@result}"
-        @result
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
